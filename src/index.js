@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { getCountries } from '../src/actions/actions-countries';
 import routes from './routes';
+import './country.css'
 
 render(
     <Provider store={store}>
