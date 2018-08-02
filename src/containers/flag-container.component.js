@@ -6,6 +6,8 @@ import { getCountries, searchCountries, deleteCountry } from '../actions/actions
 class CountryFlagContainer extends Component {
     constructor(props) {
         super(props);
+        this.search = this.search.bind(this)
+        this.deleteCountry = this.deleteCountry.bind(this);
     }
 
     componentDidMount() {
@@ -24,10 +26,10 @@ class CountryFlagContainer extends Component {
     render() {
         return (
             <div>
-                <div className="search text-center">
-                    <input type="text" onChange={this.search.bind(this)} />
+                <div className='search text-center'>
+                    <input type='text' onChange={this.search} />
                 </div>
-                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry.bind(this)} />
+                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} />
             </div>
         )
     }

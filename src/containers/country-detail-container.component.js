@@ -4,12 +4,10 @@ import { getCountry } from '../actions/actions-countries';
 import CountryDetails from '../presentational/country-details.component';
 
 class CountryDetailsContainer extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+        
     componentDidMount() {
-        this.props.dispatch(getCountry(this.props.params.id));
+        const integerId = parseInt(this.props.params.id, 10);
+        this.props.dispatch(getCountry(integerId));
     }
 
     render() {
